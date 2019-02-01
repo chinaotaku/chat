@@ -86,7 +86,7 @@ public class MainView extends JFrame {
 		friendChatList = new ChatList();
 		groupChatList = new ChatList();
 
-		groupChatList.addItem("ÈºÁÄ");
+		groupChatList.addItem("ç¾¤èŠ");
 		groupChatList.addMouseListener(new listMouseListener());
 
 		ImageIcon headIcon = new ImageIcon("picture/ai.png");
@@ -106,7 +106,7 @@ public class MainView extends JFrame {
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					WavePlayerBiz wavePlayer = new WavePlayerBiz("music/ai.wav");
 					wavePlayer.play(new ByteArrayInputStream(wavePlayer.getSamples()));
-					JOptionPane.showMessageDialog(null, "éœ¤Ë»ó¤¤¤·°§¤ì¤ÊÓ°¤è¡¢ÈË¤ò‚û¤Ä¤±ÙH¤á¤Æ¡¢×ï¤ËÄç¤ì¤·˜I¤Î»ê¡¢Ò»±é...ËÀ¤ó¤ÇÒŠ¤ë£¿");
+					JOptionPane.showMessageDialog(null, "æ”¾å¼€");
 					wavePlayer.stop();
 				}
 			}
@@ -146,7 +146,7 @@ public class MainView extends JFrame {
 		minibtn.addMouseListener(new BtnMouseMotionHandleBiz(this, minibtn,
 				"minimization"));
 
-		addfriendtext = new JTextArea("ºÃÓÑÌí¼Ó");
+		addfriendtext = new JTextArea("å¥½å‹æ·»åŠ ");
 		addfriendtext.setFont(comondata.getInputFont());
 		addfriendtext.setSize(getWidth(), 30);
 		addfriendtext.setLocation(0, 105);
@@ -176,7 +176,7 @@ public class MainView extends JFrame {
 			@Override
 			public void focusLost(FocusEvent e) {
 				addfriendtext.setBackground(comondata.getMainFocusColor());
-				addfriendtext.setText("ºÃÓÑÌí¼Ó");
+				addfriendtext.setText("å¥½å‹æ·»åŠ ");
 				addfriendtext.setForeground(Color.white);
 			}
 
@@ -231,8 +231,8 @@ public class MainView extends JFrame {
 		gruppan.setViewportView(groupChatList);
 
 		tabpan.setFocusable(false);
-		tabpan.addTab("ÅóÓÑ", friendpan);
-		tabpan.addTab("Èº", gruppan);
+		tabpan.addTab("æœ‹å‹", friendpan);
+		tabpan.addTab("ç¾¤", gruppan);
 		tabpan.setFont(comondata.getTabFont());
 		tabpan.setBackground(Color.white);
 
@@ -241,7 +241,7 @@ public class MainView extends JFrame {
 
 		this.getContentPane().setBackground(comondata.getMainColor());
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setTitle("ÁÄÌì¹¤¾ß");
+		this.setTitle("èŠå¤©å·¥å…·");
 		this.setUndecorated(true);
 		dragHandleBiz dragAdp = new dragHandleBiz(this);
 		this.addMouseListener(dragAdp);
@@ -249,7 +249,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * Óë CommonData ÖĞ±£´æµÄÔÚÏßÓÃ»§±í½øĞĞÍ¬²½ Ìá¹©¸øÍâ²¿Ààµ÷ÓÃ
+	 * ä¸ CommonData ä¸­ä¿å­˜çš„åœ¨çº¿ç”¨æˆ·è¡¨è¿›è¡ŒåŒæ­¥ æä¾›ç»™å¤–éƒ¨ç±»è°ƒç”¨
 	 */
 	public void initUserList(HashMap<String, userimformation> OnlineUserMap) {
 		Iterator<Entry<String, userimformation>> iter = OnlineUserMap
@@ -261,7 +261,7 @@ public class MainView extends JFrame {
 			userimformation onlineUserDetail = (userimformation) entry
 					.getValue();
 
-			// ×Ô¼º²»Ìí¼Ó
+			// è‡ªå·±ä¸æ·»åŠ 
 			if (!onlineUserDetail.getId().equals(comondata.getId())) {
 				addOnlineUserItem(onlineUserDetail.getId() + "\n"
 						+ onlineUserDetail.getName());
@@ -270,7 +270,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * Óë CommonData ÖĞ±£´æµÄÀëÏßÓÃ»§±í½øĞĞÍ¬²½ Ìá¹©¸øÍâ²¿Ààµ÷ÓÃ
+	 * ä¸ CommonData ä¸­ä¿å­˜çš„ç¦»çº¿ç”¨æˆ·è¡¨è¿›è¡ŒåŒæ­¥ æä¾›ç»™å¤–éƒ¨ç±»è°ƒç”¨
 	 */
 	public void initOffUserList(HashMap<String, userimformation> OnlineUserMap) {
 		Iterator<Entry<String, userimformation>> iter = OnlineUserMap
@@ -282,7 +282,7 @@ public class MainView extends JFrame {
 			userimformation onlineUserDetail = (userimformation) entry
 					.getValue();
 
-			// ×Ô¼º²»Ìí¼Ó
+			// è‡ªå·±ä¸æ·»åŠ 
 			if (!onlineUserDetail.getId().equals(comondata.getId())) {
 				addOfflineUserItem(onlineUserDetail.getId() + "\n"
 						+ onlineUserDetail.getName());
@@ -291,7 +291,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * ÔÚlistÄÚÌí¼ÓÔÚÏßÓÃ»§
+	 * åœ¨listå†…æ·»åŠ åœ¨çº¿ç”¨æˆ·
 	 * 
 	 * @param nameStr_
 	 */
@@ -301,7 +301,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * ÔÚlistÄÚÌí¼ÓÀëÏßÓÃ»§
+	 * åœ¨listå†…æ·»åŠ ç¦»çº¿ç”¨æˆ·
 	 * 
 	 * @param nameStr_
 	 */
@@ -311,7 +311,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * ÔÚlistÄÚÒÆ³ıÓÃ»§
+	 * åœ¨listå†…ç§»é™¤ç”¨æˆ·
 	 * 
 	 * @param nameStr_
 	 */
@@ -320,7 +320,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * ÔÚÏßÓÃ»§ÁĞ±í(ÖØĞ´jlist¿Ø¼ş)
+	 * åœ¨çº¿ç”¨æˆ·åˆ—è¡¨(é‡å†™jlistæ§ä»¶)
 	 * 
 	 * @author KumaHime
 	 */
@@ -331,20 +331,20 @@ public class MainView extends JFrame {
 		private UserListCellRenderer userlistuserlist = new UserListCellRenderer();
 
 		private Vector<String> onlineUserVector = new Vector<>(); // list
-																	// ÄÚÈİ
+																	// å†…å®¹
 
 		public ChatList() {
-			// list¸ß¶È
+			// listé«˜åº¦
 			this.setFixedCellHeight(65);
 
 			this.setBackground(Color.white);
 
 			this.setFont(comondata.getTitleWithSegoeFont());
 
-			// ÉèÖÃäÖÈ¾Æ÷Îª×Ô¶¨ÒåµÄäÖÈ¾Æ÷
+			// è®¾ç½®æ¸²æŸ“å™¨ä¸ºè‡ªå®šä¹‰çš„æ¸²æŸ“å™¨
 			this.setCellRenderer(userlistuserlist);
 
-			// ÉèÖÃlistÄÚÈİ
+			// è®¾ç½®listå†…å®¹
 			this.setListData(onlineUserVector);
 
 		}
@@ -366,7 +366,7 @@ public class MainView extends JFrame {
 		}
 
 		/**
-		 * ¸ølistÌá¹©Ìí¼ÓitemµÄ½Ó¿Ú
+		 * ç»™listæä¾›æ·»åŠ itemçš„æ¥å£
 		 * 
 		 * @param nameStr_
 		 */
@@ -378,7 +378,7 @@ public class MainView extends JFrame {
 		}
 
 		/**
-		 * ¸ølistÌá¹©É¾³ıitemµÄ½Ó¿Ú
+		 * ç»™listæä¾›åˆ é™¤itemçš„æ¥å£
 		 * 
 		 * @param nameStr_
 		 */
@@ -389,7 +389,7 @@ public class MainView extends JFrame {
 	}
 
 	/**
-	 * list äÖÈ¾Æ÷
+	 * list æ¸²æŸ“å™¨
 	 * 
 	 * @author KumaHime
 	 * 
@@ -398,12 +398,12 @@ public class MainView extends JFrame {
 			ListCellRenderer<Object> {
 		private static final long serialVersionUID = 3278668944817504772L;
 
-		private String text; // listÉÏµÄtext
+		private String text; // listä¸Šçš„text
 		private Color background; // bei jing se
 		private Color foreground;
 		private boolean online = false;
 		private String B3SStr = "";
-		private Vector<String> onlineList = new Vector<String>(); // ¼ÇÂ¼ÔÚÏßÓÃ»§
+		private Vector<String> onlineList = new Vector<String>(); // è®°å½•åœ¨çº¿ç”¨æˆ·
 
 		public UserListCellRenderer() {
 			this.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 30));
@@ -417,7 +417,7 @@ public class MainView extends JFrame {
 			text = (String) value;
 			this.setFont(comondata.getInputFont());
 			// background=isSelected?list.getSelectionBackground():list.getBackground();
-			if (onlineList.contains(text) || text.equals("ÈºÁÄ")) {
+			if (onlineList.contains(text) || text.equals("ç¾¤èŠ")) {
 				online = true;
 			} else {
 				online = false;
@@ -455,7 +455,7 @@ public class MainView extends JFrame {
 		}
 
 		/**
-		 * ÖØ»æ¸¸ÀàÃæ°å
+		 * é‡ç»˜çˆ¶ç±»é¢æ¿
 		 */
 		@Override
 		public void paintComponent(Graphics g) {
@@ -474,13 +474,13 @@ public class MainView extends JFrame {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			if (text.equals("ÈºÁÄ")) {
+			if (text.equals("ç¾¤èŠ")) {
 				g.drawString(text, (getWidth() - 50) / 2,
 						(getHeight() - 10) / 2);
 			} else {
-				g.drawString("ÕËºÅ£º" + text.split("\n")[0],
+				g.drawString("è´¦å·ï¼š" + text.split("\n")[0],
 						(getWidth() - 50) / 2, (getHeight() - 10) / 2);
-				g.drawString("ÓÃ»§Ãû£º " + text.split("\n")[1],
+				g.drawString("ç”¨æˆ·åï¼š " + text.split("\n")[1],
 						(getWidth() - 50) / 2, (getHeight() - 10) / 2
 								+ this.getFont().getSize());
 			}
@@ -488,13 +488,13 @@ public class MainView extends JFrame {
 
 		@Override
 		public Dimension getPreferredSize() {
-			return new Dimension(130, 120); // CellµÄ³ß´ç
+			return new Dimension(130, 120); // Cellçš„å°ºå¯¸
 		}
 
 	}
 
 	/**
-	 * list ¼àÌıÆ÷
+	 * list ç›‘å¬å™¨
 	 * 
 	 * @author KumaHime
 	 * 
@@ -513,13 +513,13 @@ public class MainView extends JFrame {
 		public listMouseListener(ChatList chatlist) {
 			friendChat = true;
 			clist = chatlist;
-			JMenuItem friendItem = new JMenuItem("É¾³ıºÃÓÑ");
+			JMenuItem friendItem = new JMenuItem("åˆ é™¤å¥½å‹");
 			friendItem.addMouseListener(new MouseAdapter() {
 
 				@Override
 				public void mouseReleased(MouseEvent e) {
 					if (id_now.equals("0")) {
-						JOptionPane.showMessageDialog(null, "ÏµÍ³ºÃÓÑ²»ÄÜÉ¾³ı£¡");
+						JOptionPane.showMessageDialog(null, "ç³»ç»Ÿå¥½å‹ä¸èƒ½åˆ é™¤ï¼");
 						return;
 					}
 					if (e.getButton() == MouseEvent.BUTTON1) {
@@ -547,7 +547,7 @@ public class MainView extends JFrame {
 			String value = userList.getModel()
 					.getElementAt(userList.locationToIndex(e.getPoint()))
 					.toString().trim();
-			if (value != "ÈºÁÄ") {
+			if (value != "ç¾¤èŠ") {
 				id_now = value.split("\n")[0];
 				name_now = value.split("\n")[1];
 			}
@@ -558,20 +558,20 @@ public class MainView extends JFrame {
 			if (e.getClickCount() == 2) {
 				int index = userList.locationToIndex(e.getPoint());
 				if (index >= 0) {
-					// ÈºÁÄ
+					// ç¾¤èŠ
 					if (e.getSource() == groupChatList) {
-						System.out.println("ÈºÁÄ");
+						System.out.println("ç¾¤èŠ");
 						comondata.getGroupChatFrame().setVisible(true);
 					}
 
-					// Ò»¶ÔÒ»ÁÄÌì
+					// ä¸€å¯¹ä¸€èŠå¤©
 					else {
 						String userName = userList.getModel()
 								.getElementAt(index).toString().trim();
 						if (clist.isUserOnline(userName)) {
 
 							if (comondata.getChatFrameMap().get(userName) == null) {
-								// Ìí¼Óµ½ÁÄÌìÓÃ»§±í
+								// æ·»åŠ åˆ°èŠå¤©ç”¨æˆ·è¡¨
 								comondata.getChatFrameMap().put(userName,
 										new ChatView(userName));
 							}
@@ -579,7 +579,7 @@ public class MainView extends JFrame {
 							comondata.getChatFrameMap().get(userName)
 									.setVisible(true);
 						} else {
-							JOptionPane.showMessageDialog(null, "ÓÃ»§ÀëÏß£¡ÎŞ·¨·¢ËÍ£¡");
+							JOptionPane.showMessageDialog(null, "ç”¨æˆ·ç¦»çº¿ï¼æ— æ³•å‘é€ï¼");
 						}
 					}
 				}
@@ -587,7 +587,7 @@ public class MainView extends JFrame {
 		}
 	}
 
-	// ²âÊÔÓÃ
+	// æµ‹è¯•ç”¨
 	public static void main(String[] args) {
 		MainView m = new MainView();
 		m.setVisible(true);
